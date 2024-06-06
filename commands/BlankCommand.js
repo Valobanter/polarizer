@@ -2,31 +2,15 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('name')
-        .setDescription('Descritpion')
-        .addStringOption(option => 
-            option.setName("stringName")
-                .setRequired(true)
-                .addChoices(
-                    { name: 'example 0', value: "0" },
-                    { name: 'example 1', value: "1" },
-                ))
-        .addIntegerOption(option => 
-            option.setName("intName")
-                .setRequired(true)
-                .addChoices(
-                    { name: 'example 0', value: 0 },
-                    { name: 'example 1', value: 1 },
-                ))
-        .addUserOption(option => 
-            option.setName('user')
-                .setRequired(true)),
+	.setName('make-pole')
+        .setDescription('Create a new pole')
+        .addStringOption(option => option.setName('query').setDescription('Query').setRequired(true))
+        .addIntegerOption(option => option.setName('maxsubmissions').setDescription('Max submissions per user').setRequired(true)),
 
     async execute(interaction) {
-        const string = interaction.options.getString('stringName');
-        const integer = interaction.options.getInteger('intName');
-        const user = interaction.options.getUser('user');
+        const query = interaction.options.getString('query');
+        const maxSubmissions = interaction.options.getInteger('maxsubmissions');
 
-        await interaction.reply("message");
+        await interaction.reply('message');
     },
 };
