@@ -1,0 +1,22 @@
+{
+  "name": "polarizer",
+  "version": "0.0.1",
+  "description": "discord bot for managing polls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/Valobanter/polarizer"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Valobanter Developers",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "discord.js": "^14.15.3"
+  }
+}
