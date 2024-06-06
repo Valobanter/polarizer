@@ -1,4 +1,4 @@
 @ECHO OFF
-node deploy-commands.js
+node . deploy
 node .
 pause

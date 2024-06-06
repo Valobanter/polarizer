@@ -1,13 +1,18 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const { load } = require('./commands-dir');
+const { load } = require('./commands/index.js');
 
 global.configFilePath = 'config.json'
 
 process.argv.forEach(function (val, index, array) {
 	if (index < 2) return;
+	if (val == 'deploy') {
+		require('./commands/deploy.js')();
+		process.exit(0);
+	}
 	let splits = val.split('=');
+	if (splits.length == 0) return;
 	if (splits[0] == 'config') {
 		let val = splits[1];
 		for (let i = 1; i < splits.length; i++) val += '=' + splits[i];
