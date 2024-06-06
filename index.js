@@ -1,6 +1,19 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+
+const configFilePath = 'config.json'
+
+process.argv.forEach(function (val, index, array) {
+	if (index < 2) return;
+	let splits = val.split('=');
+	if (splits[0] == 'config') {
+		let val = splits[1];
+		for (let i = 1; i < splits.length; i++) val += '=' + splits[i];
+		configFilePath = val;
+	}
+});
+
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
