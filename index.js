@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const { load } = require('./commandsDir');
+const { load } = require('./commands-dir');
 
 global.configFilePath = 'config.json'
 

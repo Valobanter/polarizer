@@ -3,7 +3,7 @@ const { clientId, guildId, token } = require('./config.json');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const commands = require('./commandsDir.js').deploy();
+const commands = require('./commands-dir').deploy();
 // Construct and prepare an instance of the REST module
 const rest = new REST().setToken(token);
 
