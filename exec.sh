@@ -1,4 +1,3 @@
 #!/bin/sh
-
-node . deploy=yes
+node . ${@:1}
 
