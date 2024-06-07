@@ -7,16 +7,17 @@ global.configFilePath = 'config.json'
 
 process.argv.forEach(function (val, index, array) {
 	if (index < 2) return;
-	if (val == 'deploy') {
-		require('./commands/deploy.js')();
-		process.exit(0);
-	}
 	let splits = val.split('=');
 	if (splits.length == 0) return;
 	if (splits[0] == 'config') {
 		let val = splits[1];
 		for (let i = 1; i < splits.length; i++) val += '=' + splits[i];
 		configFilePath = val;
+	} else if (splits[0] == 'deploy') {
+		let deploy = require('./commands/deploy.js');
+		if (splits.length == 1) return;
+		if (splits[1] == 'only') process.exit(0);
+		else if (splits[1].toLowerCase().startsWith('y')) deploy();
 	}
 });
 

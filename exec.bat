@@ -1,4 +1,3 @@
 @ECHO OFF
-node . deploy
-node .
+node . deploy=yes
 pause

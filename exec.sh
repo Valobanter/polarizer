@@ -1,5 +1,4 @@
 #!/bin/sh
 
-node . deploy
-node .
+node . deploy=yes
 
