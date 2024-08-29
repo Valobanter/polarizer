@@ -21,7 +21,7 @@ process.argv.forEach(function (val, index, array) {
 	}
 });
 
-const { token } = require('./'+configFilePath);
+const { token } = require('./' + configFilePath);
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -32,7 +32,6 @@ client.once(Events.ClientReady, () => {
 	console.log('Ready!');
 });
 
-
 client.on(Events.InteractionCreate, async interaction => {
 
 	if (!interaction.isChatInputCommand()) return;
@@ -40,7 +39,6 @@ client.on(Events.InteractionCreate, async interaction => {
 	const command = client.commands.get(interaction.commandName);
 
 	if (!command) return;
-	
 
 	try {
 		await command.execute(interaction);

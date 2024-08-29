@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "mkdir /var/lib/polarizer && cp -R commands /var/lib/polarizer/commands && cp index.js /var/lib/polarizer && cp -R node_modules /var/lib/polarizer && cp package.json /var/lib/polarizer && cp polarizer.sh /var/lib/polarizer && cp service.systemd /etc/systemd/system/polarizer.service"
+    "deploy": "mkdir /var/lib/polarizer && cp -R commands /var/lib/polarizer/commands && cp index.js /var/lib/polarizer && cp -R node_modules /var/lib/polarizer && cp package.json /var/lib/polarizer && cp polarizer.sh /var/lib/polarizer && cp service.systemd /etc/systemd/system/polarizer.service"
   },
   "repository": {
     "type": "git",
