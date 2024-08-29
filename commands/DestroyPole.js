@@ -1,8 +1,10 @@
-const { SlashCommandBuilder } = require('discord.js');
+const {
+    SlashCommandBuilder
+} = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-	.setName('destroy-pole')
+        .setName('destroy-pole')
         .setDescription('Destroy a pole')
         .addStringOption(option => option.setName('thread').setDescription('Thread ID').setRequired(true)),
     async execute(interaction) {

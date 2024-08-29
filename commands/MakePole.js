@@ -1,8 +1,10 @@
-const { SlashCommandBuilder } = require('discord.js');
+const {
+    SlashCommandBuilder
+} = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-	.setName('make-pole')
+        .setName('make-pole')
         .setDescription('Create a new pole')
         .addStringOption(option => option.setName('query').setDescription('Query').setRequired(true))
         .addIntegerOption(option => option.setName('maxsubmissions').setDescription('Max submissions per user').setRequired(true)),
