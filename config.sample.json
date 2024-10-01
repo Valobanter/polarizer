@@ -1,4 +1,7 @@
 {
 	"token": "<bot token>",
-	"clientId": "<bot client id>"
+	"clientId": "<bot client id>",
+	"guildId": "<guild id>",
+	"quoteChannelId": "<channel id>",
+	"countingChannelId": "<channel id>"
 }

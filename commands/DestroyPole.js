@@ -11,6 +11,6 @@ module.exports = {
         const query = interaction.options.getString('query');
         const maxSubmissions = interaction.options.getInteger('maxsubmissions');
 
-        await interaction.reply('message');
+        await interaction.reply('TODO!');
     },
 };

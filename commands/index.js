@@ -16,7 +16,7 @@ module.exports = {
 			if (!entry.isFile() || entry.name == 'index.js' || entry.name == 'deploy.js') continue;
 			let file = path.join(entry.parentPath, entry.name);
 			let command = require(file);
-			if ('data' in command && 'execute' in command) commands.set(command.data.nname, command);
+			if ('data' in command && 'execute' in command) commands.set(command.data.name, command);
 			else console.log(`[WARNING] The command at ${path} is missing atleast one required property`);
 		}
 		return commands;

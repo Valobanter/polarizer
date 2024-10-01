@@ -9,9 +9,7 @@ const {
 	load
 } = require('./commands/index.js');
 
-const {
-	token
-} = require('./config.json');
+const config = require('./config.json');
 
 const client = new Client({
 	intents: [GatewayIntentBits.Guilds]
@@ -20,7 +18,10 @@ const client = new Client({
 client.cooldowns = new Collection();
 client.commands = load();
 
-client.once(Events.ClientReady, () => {
+client.once(Events.ClientReady, async () => {
+	global.guild = client.guilds.cache.get(config.guildId);
+	global.guild.commands.set([]);
+	global.quoteChannel = await global.guild.channels.fetch(config.quoteChannelId);
 	console.log('Ready!');
 })
 
@@ -46,4 +47,4 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
-client.login(token);
+client.login(config.token);
